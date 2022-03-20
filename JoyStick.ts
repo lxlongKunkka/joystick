@@ -54,7 +54,7 @@ namespace JoyStick
 
     //% blockID == Listen_Key
     //% block = "Key %pin |Press"
-    //% weight = 100
+    //% weight = 90
     export function Listen_Key(pin: KEY): boolean
     {
         let Val = 2;
@@ -83,5 +83,30 @@ namespace JoyStick
         {
             return false;
         }
+    }
+
+    //% blockID == onKey
+    //% block = "Key %pin Press"
+    //% weight = 80
+    export function onKey(pin: KEY, body: Action): void {
+        let Pin = 0;
+        switch(Pin)
+        {
+            case KEY.P:
+                Pin = JoyStick_P;
+            case KEY.A:
+                Pin = KEY_A;
+            case KEY.B:
+                Pin = KEY_B;
+            case KEY.C:
+                Pin = KEY_C;
+            case KEY.D:
+                Pin = KEY_D;
+            case KEY.E:
+                Pin = KEY_E;
+            case KEY.F:
+                Pin = KEY_F;
+        }
+        pins.onPulsed(Pin, PulseValue.Low, body);
     }
 }
