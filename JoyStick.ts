@@ -54,7 +54,7 @@ namespace JoyStick
 
     //% blockID == Listen_Key
     //% block = "Key %pin |Press"
-    //% weight = 90
+    //% weight = 100
     export function Listen_Key(pin: KEY): boolean
     {
         let Val = 2;
