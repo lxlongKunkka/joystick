@@ -64,18 +64,27 @@ namespace JoyStick
         {
             case KEY.P:
                 Val = pins.digitalReadPin(JoyStick_P);
+                break;
             case KEY.A:
                 Val = pins.digitalReadPin(KEY_A);
+                break;
             case KEY.B:
                 Val = pins.digitalReadPin(KEY_A);
+                break;
             case KEY.C:
                 Val = pins.digitalReadPin(KEY_A);
+                break;
             case KEY.D:
                 Val = pins.digitalReadPin(KEY_A);
+                break;
             case KEY.E:
                 Val = pins.digitalReadPin(KEY_A);
+                break;
             case KEY.F:
                 Val = pins.digitalReadPin(KEY_A);
+                break;
+            default:
+                break;
         }
         if(Val == 0)
         {
