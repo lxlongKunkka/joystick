@@ -86,9 +86,8 @@ namespace JoyStick
             return false;
         }
     }
-/*
-    //% blockID==onKey
-    //% block="Key %pin |Press"
+
+    //% blockID==onKey block="Key %pin |Press"
     //% weight=80
     export function onKey(pin: KEY, body: Action): void {
         let Pin = 0;
@@ -111,8 +110,9 @@ namespace JoyStick
         }
         pins.onPulsed(Pin, PulseValue.Low, body);
     }
-*/
 
+
+/*
     //% blockId==onKey block="Key %pin |Press"
     //% weight=80
     export function onKey(pin: KEY, body: Action): void {
@@ -136,6 +136,7 @@ namespace JoyStick
         }
         pins.onPulsed(Pin, PulseValue.Low, body);
     }
+*/
 
     //% blockID==Listen_Dir 
     //% block="DIR Dir %pin"
