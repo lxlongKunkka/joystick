@@ -69,19 +69,19 @@ namespace JoyStick
                 Val = pins.digitalReadPin(KEY_A);
                 break;
             case KEY.B:
-                Val = pins.digitalReadPin(KEY_A);
+                Val = pins.digitalReadPin(KEY_B);
                 break;
             case KEY.C:
-                Val = pins.digitalReadPin(KEY_A);
+                Val = pins.digitalReadPin(KEY_C);
                 break;
             case KEY.D:
-                Val = pins.digitalReadPin(KEY_A);
+                Val = pins.digitalReadPin(KEY_D);
                 break;
             case KEY.E:
-                Val = pins.digitalReadPin(KEY_A);
+                Val = pins.digitalReadPin(KEY_E);
                 break;
             case KEY.F:
-                Val = pins.digitalReadPin(KEY_A);
+                Val = pins.digitalReadPin(KEY_F);
                 break;
             default:
                 break;
