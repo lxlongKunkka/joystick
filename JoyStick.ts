@@ -86,7 +86,7 @@ namespace JoyStick
     }
 
     //% blockID == onKey
-    //% block = "Key %pin Press"
+    //% block = "Key %pin |Press"
     //% weight = 80
     export function onKey(pin: KEY, body: Action): void {
         let Pin = 0;
@@ -108,5 +108,69 @@ namespace JoyStick
                 Pin = KEY_F;
         }
         pins.onPulsed(Pin, PulseValue.Low, body);
+    }
+
+    export function Listen_Dir(Dir: DIR): boolean
+    {
+        let Get_Dir = DIR.NONE;
+
+        let New_X = pins.analogReadPin(AnalogPin.P1);
+        let New_Y = pins.analogReadPin(AnalogPin.P2);
+
+        let Right = New_X - Read_X;
+        let Left  = Read_X - New_X;
+        let Up    = New_Y - Read_Y;
+        let Down  = Read_Y - New_Y;
+
+        let Dx = Math.abs(Read_X - New_X);
+        let Dy = Math.abs(New_Y - Read_Y);
+
+        let Precision = 150;
+
+        if(Right > Precision && Dy < Precision)
+        {
+            Get_Dir = DIR.R;
+        } 
+        else if (Left > Precision && Dy < Precision) 
+        {
+            Get_Dir = DIR.L;
+        } 
+        else if (Up > Precision && Dx < Precision) 
+        {
+            Get_Dir = DIR.U;
+        } 
+        else if (Down > Precision && Dx < Precision) 
+        {
+            Get_Dir = DIR.D;
+        } 
+        else if (Right > Precision && Up > Precision) 
+        {
+            Get_Dir = DIR.U_R;
+        } 
+        else if (Right > Precision && Down > Precision) 
+        {
+            Get_Dir = DIR.D_R;
+        } 
+        else if (Left > Precision && Up > Precision) 
+        {
+            Get_Dir = DIR.U_L;
+        } 
+        else if (Left > Precision && Down > Precision) 
+        {
+            Get_Dir = DIR.D_L;
+        } 
+        else 
+        {
+            Get_Dir = DIR.NONE;
+        }
+
+        if(Get_Dir == Dir)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
