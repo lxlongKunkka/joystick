@@ -35,9 +35,9 @@ namespace JoyStick
 {
     let Read_X = 0, Read_Y = 0;
 
-    //% blockID == JoyStickInit 
-    //% block = "JoyStickInit"
-    //% weight = 100
+    //% blockID==JoyStickInit 
+    //% block="JoyStickInit"
+    //% weight=100
     export function JoyStickInit(): void
     {
         pins.setPull(JoyStick_P, PinPullMode.PullUp);
@@ -52,9 +52,9 @@ namespace JoyStick
         Read_Y = pins.analogReadPin(JoyStick_Y);
     }
 
-    //% blockID == Listen_Key
-    //% block = "Key %pin |Press"
-    //% weight = 90
+    //% blockID==Listen_Key
+    //% block="Key %pin |Press"
+    //% weight=90
     export function Listen_Key(pin: KEY): boolean
     {
         let Val = 2;
@@ -85,9 +85,9 @@ namespace JoyStick
         }
     }
 
-    //% blockID == onKey
-    //% block = "Key %pin |Press"
-    //% weight = 80
+    //% blockID==onKey
+    //% block="Key %pin |Press"
+    //% weight=80
     export function onKey(pin: KEY, body: Action): void {
         let Pin = 0;
         switch(Pin)
@@ -110,9 +110,9 @@ namespace JoyStick
         pins.onPulsed(Pin, PulseValue.Low, body);
     }
 
-    //% blockID == Listen_Dir
-    //% block = "DIR Dir %pin"
-    //% weight = 70
+    //% blockID==Listen_Dir 
+    //% block="DIR Dir %pin"
+    //% weight=70
     export function Listen_Dir(Dir: DIR): boolean
     {
         let Get_Dir = DIR.NONE;
