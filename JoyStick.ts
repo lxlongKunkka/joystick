@@ -86,7 +86,7 @@ namespace JoyStick
             return false;
         }
     }
-
+/*
     //% blockID==onKey
     //% block="Key %pin |Press"
     //% weight=80
@@ -108,6 +108,31 @@ namespace JoyStick
                 Pin = KEY_E;
             case KEY.F:
                 Pin = KEY_F;
+        }
+        pins.onPulsed(Pin, PulseValue.Low, body);
+    }
+*/
+
+    //% blockId==onKey block="Key %pin |Press"
+    //% weight=80
+    export function onKey(pin: KEY, body: Action): void {
+        let Pin = 0;
+
+        //Read pin 
+        if (pin == KEY.P) {
+            Pin = JoyStick_P;
+        } else if (pin == KEY.A) {
+            Pin = KEY_A;
+        } else if (pin == KEY.B) {
+            Pin = KEY_B;
+        } else if (pin == KEY.C) {
+            Pin = KEY_C;
+        } else if (pin == KEY.D) {
+            Pin = KEY_D;
+        } else if (pin == KEY.E) {
+            Pin = KEY_E;
+        } else {
+            Pin = KEY_F;
         }
         pins.onPulsed(Pin, PulseValue.Low, body);
     }
