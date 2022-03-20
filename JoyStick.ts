@@ -110,6 +110,9 @@ namespace JoyStick
         pins.onPulsed(Pin, PulseValue.Low, body);
     }
 
+    //% blockID == Listen_Dir
+    //% block = "DIR Dir %pin"
+    //% weight = 70
     export function Listen_Dir(Dir: DIR): boolean
     {
         let Get_Dir = DIR.NONE;
