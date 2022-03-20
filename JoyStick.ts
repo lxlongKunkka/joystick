@@ -87,56 +87,40 @@ namespace JoyStick
         }
     }
 
-    //% blockID==onKey block="Key %pin |Press"
+    //% blockID==onKey 
+    //% block="Key %pin |Press"
     //% weight=80
-    export function onKey(pin: KEY, body: Action): void {
+    export function onKey(pin: KEY, body: Action): void 
+    {
         let Pin = 0;
         switch(Pin)
         {
             case KEY.P:
                 Pin = JoyStick_P;
+                break;
             case KEY.A:
                 Pin = KEY_A;
+                break;
             case KEY.B:
                 Pin = KEY_B;
+                break;
             case KEY.C:
                 Pin = KEY_C;
+                break;
             case KEY.D:
                 Pin = KEY_D;
+                break;
             case KEY.E:
                 Pin = KEY_E;
+                break;
             case KEY.F:
                 Pin = KEY_F;
+                break;
+            default:
+                break;
         }
         pins.onPulsed(Pin, PulseValue.Low, body);
     }
-
-
-/*
-    //% blockId==onKey block="Key %pin |Press"
-    //% weight=80
-    export function onKey(pin: KEY, body: Action): void {
-        let Pin = 0;
-
-        //Read pin 
-        if (pin == KEY.P) {
-            Pin = JoyStick_P;
-        } else if (pin == KEY.A) {
-            Pin = KEY_A;
-        } else if (pin == KEY.B) {
-            Pin = KEY_B;
-        } else if (pin == KEY.C) {
-            Pin = KEY_C;
-        } else if (pin == KEY.D) {
-            Pin = KEY_D;
-        } else if (pin == KEY.E) {
-            Pin = KEY_E;
-        } else {
-            Pin = KEY_F;
-        }
-        pins.onPulsed(Pin, PulseValue.Low, body);
-    }
-*/
 
     //% blockID==Listen_Dir 
     //% block="DIR Dir %pin"
