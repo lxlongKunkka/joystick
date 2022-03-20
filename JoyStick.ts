@@ -93,7 +93,7 @@ namespace JoyStick
     export function onKey(pin: KEY, body: Action): void 
     {
         let Pin = 0;
-        switch(Pin)
+        switch(pin)
         {
             case KEY.P:
                 Pin = JoyStick_P;
