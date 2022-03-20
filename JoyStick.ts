@@ -38,7 +38,6 @@ namespace JoyStick
     //% blockID == JoyStickInit 
     //% block = "JoyStickInit"
     //% weight = 100
-    //% color = 190
     export function JoyStickInit(): void
     {
         pins.setPull(JoyStick_P, PinPullMode.PullUp);
@@ -55,7 +54,7 @@ namespace JoyStick
 
     //% blockID == Listen_Key
     //% block = "Key %pin |Press"
-    //% weight = 50
+    //% weight = 90
     export function Listen_Key(pin: KEY): boolean
     {
         let Val = 2;
